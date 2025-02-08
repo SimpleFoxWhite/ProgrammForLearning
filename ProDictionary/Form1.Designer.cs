@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             toolStrip1 = new ToolStrip();
             toolStripButton2 = new ToolStripButton();
+            toolStripButton1 = new ToolStripButton();
+            toolStripButton3 = new ToolStripButton();
             saveFileDialog1 = new SaveFileDialog();
             button1 = new Button();
             textBox1 = new TextBox();
@@ -39,6 +41,7 @@
             button3 = new Button();
             button2 = new Button();
             richTextBox1 = new RichTextBox();
+            openFileDialog1 = new OpenFileDialog();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +49,7 @@
             // 
             toolStrip1.BackColor = Color.White;
             toolStrip1.ImageScalingSize = new Size(24, 24);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton2 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton2, toolStripButton1, toolStripButton3 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(937, 33);
@@ -62,6 +65,25 @@
             toolStripButton2.Size = new Size(34, 28);
             toolStripButton2.Text = "Запустить обучение";
             toolStripButton2.Click += toolStripButton2_Click;
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(34, 28);
+            toolStripButton1.Text = "toolStripButton1";
+            toolStripButton1.Click += toolStripButton1_Click;
+            // 
+            // toolStripButton3
+            // 
+            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
+            toolStripButton3.ImageTransparentColor = Color.Magenta;
+            toolStripButton3.Name = "toolStripButton3";
+            toolStripButton3.Size = new Size(34, 28);
+            toolStripButton3.Text = "toolStripButton3";
             // 
             // button1
             // 
@@ -138,6 +160,10 @@
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -173,5 +199,8 @@
         private Button button3;
         private Button button2;
         private RichTextBox richTextBox1;
+        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButton3;
+        private OpenFileDialog openFileDialog1;
     }
 }

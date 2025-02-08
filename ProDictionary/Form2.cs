@@ -21,6 +21,7 @@ namespace ProDictionary
         public Form2(Dictionary<string, string> dictionary)
         {
             InitializeComponent();
+            AcceptButton = button1;
             int randInt = dictionary.Count;
             NewDictionary = dictionary;
             
@@ -43,6 +44,7 @@ namespace ProDictionary
                 }
                 label1.Text = CurrentWord;
                 Tester = true;
+                textBox1.Clear();
             }
             else 
             {
@@ -66,6 +68,7 @@ namespace ProDictionary
                 {
                     label2.Text = CurrentTranslate;
                 }
+                textBox1.Clear();
             }
         }
     }

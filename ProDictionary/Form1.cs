@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace ProDictionary
 {
-    
+
 
     public partial class Form1 : Form
     {
@@ -17,9 +17,9 @@ namespace ProDictionary
 
         private void button1_Click(object sender, EventArgs e) //FunctionAddNewWordInDictionary
         {
-            dictionary.Add(textBox2.Text,  textBox1.Text);
+            dictionary.Add(textBox2.Text, textBox1.Text);
             listBox1.Items.Clear();
-            foreach(var item in dictionary) 
+            foreach (var item in dictionary)
             {
                 listBox1.Items.Add(item.Key + " " + item.Value);
             }
@@ -30,20 +30,20 @@ namespace ProDictionary
         private void button3_Click(object sender, EventArgs e) //FunctionDeleteOneSelectedWord
         {
             string SelectedWord = listBox1.SelectedItem as string;
-            if (SelectedWord != null) 
+            if (SelectedWord != null)
             {
                 listBox1.Items.Remove(SelectedWord);
                 string RealWord = "";
                 bool flagChecker = false;
-                foreach(var lit in SelectedWord) 
+                foreach (var lit in SelectedWord)
                 {
-                    if(flagChecker == false) 
+                    if (flagChecker == false)
                     {
-                        if(lit == ' ') 
+                        if (lit == ' ')
                         {
                             flagChecker = true;
                         }
-                        else 
+                        else
                         {
                             RealWord = RealWord + lit;
                         }
@@ -65,6 +65,15 @@ namespace ProDictionary
         {
             Form2 newForm = new Form2(dictionary);
             newForm.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e) //FunctionSave
+        {
+            foreach (var item in dictionary) 
+            {
+                WordForLearn time = new WordForLearn(item.Key, item.Value);
+
+            }
         }
     }
     class WordForLearn
